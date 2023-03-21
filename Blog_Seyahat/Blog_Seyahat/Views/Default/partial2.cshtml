@@ -1,0 +1,14 @@
+﻿
+@using Blog_Seyahat.Models.Sınıflar
+@model List<Blog>
+
+
+<h4>Top 10 Blog</h4>
+<ul class="list list-pad">
+
+    @foreach (var x in Model)
+    {
+        <li class="list-bg" style="padding-top:10px;padding-bottom:10px;"><span>#</span><a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a></li>
+    }
+</ul>
+<a href="/Blog/Index" class="link1">Tüm Bloglar...</a>
