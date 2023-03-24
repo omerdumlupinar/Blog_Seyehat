@@ -1,0 +1,29 @@
+﻿@model Blog_Seyahat.Models.Sınıflar.Hakkimizda
+
+@{
+    ViewBag.Title = "Hakkimizda";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2 class="text-center">Hakkımızda Güncelle</h2>
+<br />
+<div class="container col-lg-12">
+
+    @using (Html.BeginForm("HakkimizdaGuncelle", "Admin", FormMethod.Post))
+    {
+
+        <div>
+            @Html.HiddenFor(x=>x.ID);
+            <label>Açıklama</label>
+            @Html.TextAreaFor(x => x.Aciklama, 15, 1, new { @class = "form-control" })
+            <br />
+            <label>Fotograf URL</label>
+            @Html.TextBoxFor(x => x.fotoUrl, new { @class = "form-control" })
+            <br />
+            <button class="btn btn-success">Hakkımızda Güncelle</button>
+        </div>
+    }
+
+</div>
+

@@ -27,8 +27,25 @@ namespace Blog_Seyahat.Controllers
         {
             //var degerler = c.GetBlogs.Where(x => x.ID == id).ToList();
             by.Deger1 = c.GetBlogs.Where(x => x.ID == id).ToList();
-            by.Deger2 = c.Yorumlars.Where(x => x.Blogid == id).ToList();
+            by.Deger2 = c.Yorumlars.Where(x => x.Blogid == id && x.YorumOnay==1).ToList();
             return View(by);
+        }
+
+        [HttpGet]
+        public PartialViewResult YorumYap(int id)
+        {
+            ViewBag.deger = id;
+            return PartialView();
+        }
+
+
+        [HttpPost]
+        public PartialViewResult YorumYap(Yorumlar y,int id)
+        {
+            c.Yorumlars.Add(y);
+            c.SaveChanges();
+            return PartialView();
+
         }
     }
 }

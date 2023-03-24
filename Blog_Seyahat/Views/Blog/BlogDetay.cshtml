@@ -50,7 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="content-grid-info">
                         <img src="@x.BlogImage" alt="" />
                         <div class="post-info">
-                            <h4><a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a> <br /> <br /> @x.Tarih.ToShortDateString()</h4>
+                            <h4><a href="">@x.Baslik</a> <br /> <br /> @x.Tarih.ToShortDateString()</h4>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;@x.Aciklama</p>
                         </div>
                     </div>
@@ -77,17 +77,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 
+                @Html.Action("YorumYap","Blog")
 
-
-                <div class="content-form">
-                    <h3 style="text-align:center"> Bir Yorum Bırakın</h3>
-                    <form>
-                        <input type="text" placeholder="Kullanıcı Adı" required />
-                        <input type="text" placeholder="Email" required />
-                        <textarea placeholder="Yorum"></textarea>
-                        <input type="submit" value="Yorum Yap" />
-                    </form>
-                </div>
+              
             </div>
 
 

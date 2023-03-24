@@ -1,0 +1,25 @@
+﻿@model Blog_Seyahat.Models.Sınıflar.Yorumlar
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="text-center">Yorum Düzenle</h2>
+<br />
+
+<div class="container col-lg-12">
+
+    @using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+    {
+        <div>
+            @Html.HiddenFor(x=>x.ID)
+            <label>Yorum</label>
+            @Html.TextAreaFor(x => x.Yorum, 10, 1, new { @class = "form-control" })
+            <br />
+           
+            <button class="btn btn-success">Yorumu Düzenle</button>
+        </div>
+    }
+</div>
+
+
