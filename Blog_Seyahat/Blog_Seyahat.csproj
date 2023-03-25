@@ -269,6 +269,9 @@
     <Content Include="Views\GirisYap\Login.cshtml" />
     <Content Include="Views\Admin\Hakkimizda.cshtml" />
     <Content Include="Views\Iletisim\Index.cshtml" />
+    <Content Include="Views\Iletisim\iletisimForm.cshtml" />
+    <Content Include="Views\Admin\Iletisim.cshtml" />
+    <Content Include="Views\Admin\MesajGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

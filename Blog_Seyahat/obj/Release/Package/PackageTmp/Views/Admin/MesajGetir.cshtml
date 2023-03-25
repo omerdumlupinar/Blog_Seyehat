@@ -1,0 +1,33 @@
+﻿@model Blog_Seyahat.Models.Sınıflar.iletisim
+@{
+    ViewBag.Title = "MesajGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="text-center">Mesaj Detayı</h2>
+<br />
+
+<div class="container col-lg-12">
+
+
+    @using (Html.BeginForm("MesajDetayGoster", "Admin", FormMethod.Post))
+    {
+
+        <div>
+            <label>Konu</label>
+            @Html.TextBoxFor(x => x.Konu, new { @class="form-control"})
+            <br />
+            <label>Mesaj</label>
+            @Html.TextAreaFor(x => x.Mesaj,8,1, new { @class="form-control" })
+        </div>
+
+
+
+    }
+
+
+
+
+
+</div>
+

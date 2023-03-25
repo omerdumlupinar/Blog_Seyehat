@@ -117,9 +117,26 @@ namespace Blog_Seyahat.Controllers
 
         //iletişim
 
+        [Authorize]
         public ActionResult Iletisim()
         {
-            return View();
+
+            var bilgiler = c.İletisims.ToList();
+            return View(bilgiler);
+
+        }
+        public ActionResult MesajSil(int id)
+        {
+            var bul = c.İletisims.Find(id);
+
+            c.İletisims.Remove(bul);
+            c.SaveChanges();
+            return RedirectToAction("Iletisim");
+        }
+        public ActionResult MesajGetir(int id)
+        {
+            var gelenMesajID = c.İletisims.Find(id);
+            return View("MesajGetir",gelenMesajID);
         }
 
 
@@ -149,11 +166,6 @@ namespace Blog_Seyahat.Controllers
             return View("Hakkimizda");
 
         }
-
-
-
-
-
 
     }
 }

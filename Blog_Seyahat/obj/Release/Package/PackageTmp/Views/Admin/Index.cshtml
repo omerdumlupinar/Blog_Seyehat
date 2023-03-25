@@ -1,0 +1,35 @@
+﻿@using Blog_Seyahat.Models.Sınıflar
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container col-lg-12">
+    <h2 class="text-center">Blog Listesi</h2>
+    <br />
+    <a href="/Admin/YeniBlog/" class="btn btn-primary" style="margin-bottom:20px; font-size:12pt">Yeni Blog Ekle</a>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Başlık</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ID</td>
+                <td>@x.Baslik</td>
+                <td> <a href="/Admin/BlogSil/@x.ID" class="btn btn-danger">Sil</a></td>
+                <td> <a href="/Admin/BlogGetir/@x.ID" class="btn btn-success">Güncelle</a></td>
+                <td> <a href="" class="btn btn-info">Blog Detayı</a></td>
+
+            </tr>
+
+        }
+    </table>
+</div>
+

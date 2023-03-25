@@ -1,0 +1,19 @@
+﻿
+
+@using Blog_Seyahat.Models.Sınıflar
+@model List<Yorumlar>
+
+
+
+<div style="margin-top:-30px">
+    <h4>Beğenilen Yorumlar</h4>
+    <div class="box1-left">
+        <ul class="list list-pad">
+
+            @foreach (var x in Model)
+            {
+                <li class="list-bg" style="padding-top:20px;padding-bottom:40px;"><span>@x.KullaniciAdi</span> <br /> <a href="/Blog/BlogDetay/@x.ID">@x.Yorum</a></li>
+            }
+        </ul>
+    </div>
+</div>

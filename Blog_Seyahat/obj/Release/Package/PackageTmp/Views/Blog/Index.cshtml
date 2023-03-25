@@ -1,0 +1,109 @@
+﻿@model Blog_Seyahat.Models.Sınıflar.BlogYorum
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Home :: w3layouts</title>
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+    <!--script-->
+    <script type="/text/javascript" src="~/web2/js/move-top.js"></script>
+    <script type="/text/javascript" src="~/web2/js/easing.js"></script>
+    <!--/script-->
+
+</head>
+<body>
+
+
+    <div class="content">
+        <div class="container">
+            <div class="content-grids">
+                <div class="col-md-8 content-main">
+                    <div class="content-grid">
+
+                        @foreach (var x in Model.Deger1)
+                        {
+                            <div class="content-grid-info">
+                                <a href="/Blog/BlogDetay/@x.ID"><img src="@x.BlogImage" alt="" /></a>
+                                <div class="post-info">
+                                    <h4><a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a> <br /> <br /> @x.Tarih.ToShortDateString() </h4>
+                                    <p> &nbsp; &nbsp; &nbsp; &nbsp;@x.Aciklama.Substring(0, 320) ...</p>
+                                    <a href="/Blog/BlogDetay/@x.ID" style="float:right"><span></span>Devamını Oku</a>
+                                </div>
+                            </div>
+                        }
+
+
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-4 content-right">
+                    <div class="recent">
+                        <h3 style="color:#00AEFF;">SON BLOGLAR</h3>
+
+                        @foreach (var y in Model.Deger3)
+                        {<ul>
+                                <li><a href="/Blog/BlogDetay/@y.ID">@y.Baslik</a></li>
+                            </ul>
+                        }
+
+
+
+                    </div>
+                    <div class="comments">
+                        <h3 style="color:#00AEFF;">SON YORUMLAR</h3> 
+
+
+                        @foreach (var z in Model.Deger2)
+                        {<ul>
+                                <li><a href="/Blog/BlogDetay/@z.Blogid">@z.KullaniciAdi <br />@z.Yorum</a> </li>
+
+                            </ul>
+                        }
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!---->
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+

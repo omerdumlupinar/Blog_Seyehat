@@ -80,3 +80,4 @@ C:\Users\Asus-Pc\Desktop\Blog_Seyahat\Blog_Seyahat\bin\EntityFramework.dll
 C:\Users\Asus-Pc\Desktop\Blog_Seyahat\Blog_Seyahat\bin\EntityFramework.SqlServer.dll
 C:\Users\Asus-Pc\Desktop\Blog_Seyahat\Blog_Seyahat\bin\EntityFramework.xml
 C:\Users\Asus-Pc\Desktop\Blog_Seyahat\Blog_Seyahat\bin\EntityFramework.SqlServer.xml
+C:\Users\Asus-Pc\Desktop\Blog_Seyahat\Blog_Seyahat\obj\Debug\Blog_Seyahat.csproj.AssemblyReference.cache

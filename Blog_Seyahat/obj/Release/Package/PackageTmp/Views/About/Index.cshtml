@@ -1,0 +1,27 @@
+﻿
+@using Blog_Seyahat.Models.Sınıflar;
+@model List<Hakkimizda>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            
+
+            @foreach (var x in Model)
+            {
+                <img src="@x.fotoUrl" alt="" />
+                <p>@x.Aciklama</p>
+            }
+
+            
+
+        </div>
+    </div>
+</div>
+

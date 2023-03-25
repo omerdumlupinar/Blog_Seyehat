@@ -1,0 +1,51 @@
+﻿
+
+@using Blog_Seyahat.Models.Sınıflar
+@model List<iletisim>
+
+
+
+@{
+    ViewBag.Title = "Iletisim";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container col-lg-12">
+    <h2 class="text-center">Gönderilen Mesajlar</h2>
+    <br />
+
+    <table class="table table-hover text-center">
+        <tr style="text-align:center">
+            <th style="text-align:center">Ad Soyad</th>
+            <th style="text-align:center">Mail</th>
+            <th style="text-align:center">Konu</th>
+            <th style="text-align:center">Mesaj</th>
+            <th style="text-align:center">Mesaj Sil</th>
+            <th style="text-align:center">Yorum Detay</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.AdSoyad</td>
+                <td><a href="mailto:@x.Mail">@x.Mail</a></td>
+                <td>@x.Konu</td>
+                <td>@x.Mesaj.Substring(0,30)...</td>
+                <td> <a href="/Admin/MesajSil/@x.ID" class="btn btn-danger">Yorum Sil</a></td>
+                <td> <a href="/Admin/MesajGetir/@x.ID" class="btn btn-info">Yorum Detayı</a></td>
+
+            </tr>
+
+        }
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
